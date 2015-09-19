@@ -1,6 +1,6 @@
 {
   "name": "errorcode",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Adds status to an error",
   "main": "src/errorcode.js",
   "scripts": {

@@ -8,7 +8,7 @@ describe('index', function () {
   
   it('returns the errorcode module', function () {
     
-    expect(typeof index).to.be.equals('function');
+    expect(typeof index).to.be.equals('object');
     expect(index).to.be.equals(errorcode);
     
   });
