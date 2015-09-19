@@ -49,14 +49,16 @@ gulp.task('test', testTask);
 
 gulp.task('cover', function (done) {
   gulp.src(mainSources)
-  .pipe(istanbul())
+  .pipe(istanbul({ includeUntested: true }))
   .pipe(istanbul.hookRequire())
   .on('finish', function () {
-     testTask()
-     //.pipe(istanbul.writeReports({ dir: './target/coverage' }))
-     .pipe(istanbul.enforceThresholds({ thresholds: { global: 90 } }))
-     .on('end', done);
-   });
+    testTask()
+    .pipe(mocha())
+    .pipe(istanbul.writeReports({ dir: './~coverage' }))
+    .pipe(istanbul.enforceThresholds({ thresholds: { global: 90 } }))
+    .on('end', done);
+  });
+
 });
 
 
